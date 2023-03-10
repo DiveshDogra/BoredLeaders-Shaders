@@ -118,7 +118,7 @@ Shader "UI/ShineEffect"
                     #endif
 
 
-                fixed currentDistanceProjection = ((IN.texcoord.x * 5) - IN.texcoord.y) / 6;
+                fixed currentDistanceProjection = ((IN.texcoord.x * 1) - IN.texcoord.y) / 6;
                 fixed lowLevel = _ShineLocation - _ShineWidth;
                 fixed highLevel = _ShineLocation + _ShineWidth;
                 fixed shinePower = smoothstep(_ShineWidth, 0, abs(abs(clamp(currentDistanceProjection, lowLevel ,highLevel) - _ShineLocation)));

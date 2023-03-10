@@ -36,15 +36,15 @@ namespace ShaderEffects
             //@Divesh - get the material from sprite
             _spriteRenderer = GetComponent<Image>();
             spriteMaterial = _spriteRenderer.material;
-            StartCoroutine(ShineCoroutine());
+            StartShineCoroutine(_defaultShinePos, _shineSpeed, _isLoop, _delay);
         }
 
-        public void StartShineCoroutine()
+        public void StartShineCoroutine(float startShinePos, float shineSpeed, bool isLoop, float delay)
         {
-
+            StartCoroutine(ShineCoroutine(startShinePos, shineSpeed, isLoop, delay));
         }
 
-        private IEnumerator ShineCoroutine()
+        private IEnumerator ShineCoroutine(float _startShinePos, float _shineSpeed, bool isLoop, float Delay)
         {
             //@Divesh - Repeat this routine if Loop is true
             if (_isLoop)
@@ -64,7 +64,7 @@ namespace ShaderEffects
                 }
                 //@Divesh - reset shader value 
                 _currentShinePos = _defaultShinePos;
-                StartCoroutine(ShineCoroutine());
+                StartCoroutine(ShineCoroutine(_defaultShinePos, _shineSpeed, isLoop, _delay));
             }
             else
             {
@@ -74,7 +74,7 @@ namespace ShaderEffects
                 spriteMaterial.SetFloat(_shineLocationParameterID, _defaultShinePos);
                 yield return new WaitForEndOfFrame();
                 //@Divesh - stop shader animation 
-                StopCoroutine(ShineCoroutine());
+                StopCoroutine(ShineCoroutine(_defaultShinePos, _shineSpeed, isLoop, _delay));
             }
             yield break;
         }
