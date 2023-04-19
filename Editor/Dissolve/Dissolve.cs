@@ -36,7 +36,7 @@ public class Dissolve : MonoBehaviour
 
 			// Set the property
 			material.SetFloat("_Fade", fade);
-			gameObject.SetActive(false);
+			// gameObject.SetActive(false);
 		}
     }
 }
