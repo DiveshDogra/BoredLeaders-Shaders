@@ -7,12 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 2D_Glow_Mat
+  m_Name: Gold_Outline_Mat
   m_Shader: {fileID: -6465566751694194690, guid: 00ac28edaf30cce4d83861d0f2b73171, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -21,11 +21,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _GlowTex:
-        m_Texture: {fileID: 2800000, guid: 6980a697d90c2f44298cedd586944861, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9dc86d11ee0f9e849864b6fab4893be0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 00997ba4a3a008d43a6d20757ec39724, type: 3}
+        m_Texture: {fileID: 2800000, guid: 46e4dabecae7b114b869246caf02bc08, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -41,22 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats:
-    - _QueueControl: 0
-    - _QueueOffset: 0
+    m_Floats: []
     m_Colors:
-    - _GlowColor: {r: 0, g: 1024, b: 0, a: 1}
+    - _GlowColor: {r: 574.24316, g: 766.9961, b: 0, a: 0.15686275}
   m_BuildTextureStacks: []
---- !u!114 &5412127796386218922
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
