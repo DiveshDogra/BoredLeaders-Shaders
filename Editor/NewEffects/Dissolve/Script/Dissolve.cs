@@ -15,6 +15,7 @@ public class Dissolve : MonoBehaviour
 	{
 		// Get a reference to the material
 		_material = GetComponent<Image>().material;
+		_material.SetFloat("_Fade", _fade);
 	}
 
 	void Update()
@@ -32,7 +33,7 @@ public class Dissolve : MonoBehaviour
 
 	void DissolveCard()
 	{
-		_fade -= Time.deltaTime;
+		_fade -= Time.deltaTime *2f;
 
 		if (_fade <= 0f)
 		{
