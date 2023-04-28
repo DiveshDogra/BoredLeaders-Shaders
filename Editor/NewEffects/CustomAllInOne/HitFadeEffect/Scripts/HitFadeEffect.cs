@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,9 @@ using UnityEngine.UI;
 
 public class HitFadeEffect : MonoBehaviour
 {
-private Material _material;
+	public static event Action ActivateEffect;
+
+    private Material _material;
     private Button _btn;
     private float _fadeAmount;
     private float _hitEffectBlend;
@@ -20,22 +23,16 @@ private Material _material;
         _isCardActivated = false;
         _isHitEffectIn = false;
 
-        // _btn = GetComponent<Button>();
-        // _btn.onClick.AddListener(CardActivated);
+        _btn = GetComponent<Button>();
+        _btn.onClick.AddListener(CardActivated);
 
         _material = GetComponent<Image>().material;
         _material.SetFloat("_FadeAmount", _fadeAmount);
 		_material.SetFloat("_HitEffectBlend", _hitEffectBlend);
-
-        
     }
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space))
-        {
-            _isCardActivated = true;
-        }
 
         if(_isCardActivated)
         {
@@ -44,6 +41,7 @@ private Material _material;
 
         if(_isHitEffectIn)
         {
+            ActivateEffect.Invoke();
             HitEffectOut();
 
         }
@@ -64,7 +62,6 @@ private Material _material;
     }
 
     void HitEffectOut()
-
     {
         _hitEffectBlend -= Time.deltaTime *10f;
         if (_hitEffectBlend <= 0f)
@@ -72,6 +69,7 @@ private Material _material;
             _hitEffectBlend = 0f;
         }
 		_material.SetFloat("_HitEffectBlend", _hitEffectBlend);
+
         StartCoroutine(FadeOut());
 
     }
@@ -93,14 +91,14 @@ private Material _material;
 
     }
 
-    // void CardActivated()
-	// {
-	// 	_isCardActivated = true;
-	// }
+    void CardActivated()
+	{
+		_isCardActivated = true;
+	}
 
 
-    // void OnDisable()
-    // {
-    //     _btn.onClick.RemoveAllListeners();
-    // }
+    void OnDisable()
+    {
+        _btn.onClick.RemoveAllListeners();
+    }
 }
