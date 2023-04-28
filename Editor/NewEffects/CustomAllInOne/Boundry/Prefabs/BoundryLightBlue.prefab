@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 759176606120709615}
   - component: {fileID: 759176606120709612}
   - component: {fileID: 759176606120709613}
+  - component: {fileID: 4006944815565576173}
   m_Layer: 5
   m_Name: BoundryLightBlue
   m_TagString: Untagged
@@ -156,3 +157,15 @@ MonoBehaviour:
   duplicateOrderInLayer: -100
   duplicateSortingLayer: Default
   createUnifiedOutline: 0
+--- !u!114 &4006944815565576173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759176606120709607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cbd17b17e45a684caa7475c646d40d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
